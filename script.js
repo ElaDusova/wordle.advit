@@ -22,7 +22,7 @@ fetch('index.txt')
                 words[word.length].push(word);
             }
         });
-        console.log(words); // For debugging purposes
+        console.log(words); 
     })
     .catch(error => console.error('Error loading words:', error));
 
@@ -137,7 +137,7 @@ function provideFeedback(attempt) {
         }
     }
 
-    // Second pass: check for misplaced letters (pink)
+    
     for (let i = 0; i < wordLength; i++) {
         if (letterMatchStatus[i] !== 'correct' && selectedWordArray.includes(attemptArray[i])) {
             letterMatchStatus[i] = 'misplaced';
@@ -145,7 +145,7 @@ function provideFeedback(attempt) {
         }
     }
 
-    // Apply classes to letters
+
     for (let i = 0; i < wordLength; i++) {
         letters[i].className = 'letter ' + letterMatchStatus[i];
     }
