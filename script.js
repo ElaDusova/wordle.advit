@@ -12,13 +12,12 @@ let attempts = [];
 const inputField = document.getElementById("myInput");
 const gameBoard = document.getElementById("game-board");
 
-// Load words from index.txt
 fetch('index.txt')
     .then(response => response.text())
     .then(data => {
         const lines = data.split('\n');
         lines.forEach(line => {
-            const word = line.split('/')[0].trim().toUpperCase(); // Get the word before the slash
+            const word = line.split('/')[0].trim().toUpperCase(); 
             if (word.length >= 4 && word.length <= 6) {
                 words[word.length].push(word);
             }
@@ -27,7 +26,7 @@ fetch('index.txt')
     })
     .catch(error => console.error('Error loading words:', error));
 
-// Select difficulty and start game
+// obtížnost hry
 document.querySelectorAll(".count").forEach(button => {
     button.addEventListener("click", (e) => {
         wordLength = parseInt(e.target.innerText);
@@ -45,7 +44,7 @@ function startGame() {
     attempts = [];
     clearInputField();
     renderGameBoard();
-    console.log("Selected word:", selectedWord); // For debugging purposes
+    console.log("Selected word:", selectedWord);
 }
 
 function renderGameBoard() {
@@ -128,14 +127,13 @@ function provideFeedback(attempt) {
     const selectedWordArray = selectedWord.split('');
     const attemptArray = attempt.split('');
 
-    // Create arrays to keep track of which letters have been matched
+ 
     const letterMatchStatus = Array(wordLength).fill('incorrect');
 
-    // First pass: check for correct letters (green)
     for (let i = 0; i < wordLength; i++) {
         if (attemptArray[i] === selectedWordArray[i]) {
             letterMatchStatus[i] = 'correct';
-            selectedWordArray[i] = null; // Remove the letter from consideration
+            selectedWordArray[i] = null; 
         }
     }
 
@@ -143,7 +141,7 @@ function provideFeedback(attempt) {
     for (let i = 0; i < wordLength; i++) {
         if (letterMatchStatus[i] !== 'correct' && selectedWordArray.includes(attemptArray[i])) {
             letterMatchStatus[i] = 'misplaced';
-            selectedWordArray[selectedWordArray.indexOf(attemptArray[i])] = null; // Remove the letter from consideration
+            selectedWordArray[selectedWordArray.indexOf(attemptArray[i])] = null;
         }
     }
 
@@ -157,5 +155,4 @@ function clearInputField() {
     inputField.value = "";
 }
 
-// Start the game with default settings
 startGame();
