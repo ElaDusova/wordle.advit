@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle cz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+    <h1>Wordle</h1>
+    <div id="difficulty">
+        <p>Vyberte obtížnost hry.</p>
+        <div class="count">4</div>
+        <div class="count">5</div>
+        <div class="count">6</div>
+    </div>
+    <div id="game-board">
+        <!-- Pokusy o uhodnutí slova budou zde -->
+    </div>
+    <div id="keyboard">
+        <div class="first-row">
+            <button class="keyboard-button">Ě</button>
+            <button class="keyboard-button">Š</button>
+            <button class="keyboard-button">Č</button>
+            <button class="keyboard-button">Ř</button>
+            <button class="keyboard-button">Ž</button>
+            <button class="keyboard-button">Ý</button>
+            <button class="keyboard-button">Á</button>
+            <button class="keyboard-button">Í</button>
+            <button class="keyboard-button">É</button>
+            <button class="keyboard-button">Ň</button>
+            <button class="keyboard-button">Ď</button>
+            <button class="keyboard-button">Ó</button>
+            <button class="keyboard-button">Ť</button>
+        </div>
+        <div class="second-row">
+            <button class="keyboard-button">Q</button>
+            <button class="keyboard-button">W</button>
+            <button class="keyboard-button">E</button>
+            <button class="keyboard-button">R</button>
+            <button class="keyboard-button">T</button>
+            <button class="keyboard-button">Y</button>
+            <button class="keyboard-button">U</button>
+            <button class="keyboard-button">I</button>
+            <button class="keyboard-button">O</button>
+            <button class="keyboard-button">P</button>
+            <button class="keyboard-button">Ů</button>
+            <button class="keyboard-button">Ú</button>
+        </div>
+        <div class="third-row">
+            <button class="keyboard-button">A</button>
+            <button class="keyboard-button">S</button>
+            <button class="keyboard-button">D</button>
+            <button class="keyboard-button">F</button>
+            <button class="keyboard-button">G</button>
+            <button class="keyboard-button">H</button>
+            <button class="keyboard-button">J</button>
+            <button class="keyboard-button">K</button>
+            <button class="keyboard-button">L</button>
+        </div>
+        <div class="forth-row">
+            <button class="keyboard-button">Del</button>
+            <button class="keyboard-button">Z</button>
+            <button class="keyboard-button">X</button>
+            <button class="keyboard-button">C</button>
+            <button class="keyboard-button">V</button>
+            <button class="keyboard-button">B</button>
+            <button class="keyboard-button">N</button>
+            <button class="keyboard-button">M</button>
+            <button class="keyboard-button">Enter</button>
+        </div>
+        <div id="message"></div>
+
+    </div>
+    <input type="text" id="myInput" autofocus style="display:none;">
+</div>
+<script src="script.js"></script>
+</body>
+</html>
